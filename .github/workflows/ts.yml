@@ -1,0 +1,16 @@
+name: just test actions
+on:
+  push:
+
+jobs:
+  ts1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: generate file
+        run: |
+          echo 233 > ts.txt
+      - uses: actions/upload-artifact@v2
+        name: upload artifact
+        with:
+          path: ./ts.txt
+          name: number
