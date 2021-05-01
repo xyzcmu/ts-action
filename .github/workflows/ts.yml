@@ -10,6 +10,8 @@ jobs:
         uses: actions/checkout@v2
       - name: generate txt
         run: |
+          echo list files
+          ls
           cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
           data=$(date +"%Y%m%d.%H%M%S")
           echo $data > a.txt
