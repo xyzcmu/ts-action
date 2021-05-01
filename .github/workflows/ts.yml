@@ -6,7 +6,8 @@ jobs:
   ts1:
     runs-on: ubuntu-latest
     steps:
-
+      - name: checkout loacal repo
+        uses: actions/checkout@v2
       - name: generate txt
         run: |
           cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
