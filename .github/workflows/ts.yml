@@ -12,6 +12,6 @@ jobs:
           cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
           echo $(date +"%Y%m%d.%H%M%S") > a.txt
       - name: commit
-        usese: elstudio/actions-js-build/commit@v4
+        uses: elstudio/actions-js-build/commit@v4
         with:
           commitMessage: auto commit
