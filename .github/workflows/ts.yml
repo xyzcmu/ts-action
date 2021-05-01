@@ -6,11 +6,13 @@ jobs:
   ts1:
     runs-on: ubuntu-latest
     steps:
-      - name: generate file
-        run: |
-          echo 233 > ts.txt
-      - uses: actions/upload-artifact@v2
-        name: upload artifact
+
+      - name: download artifact
+        uses: actions/download-artifact@v2
         with:
-          path: ./ts.txt
           name: number
+      - name: read artifact
+        run: |
+          content=$(cat ts.txt)
+          echo file-content
+          echo $content
