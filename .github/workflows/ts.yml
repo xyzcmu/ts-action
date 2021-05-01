@@ -1,6 +1,8 @@
 name: just test actions
 on:
   push:
+  schedule:
+    - cron: "*/10 * * * *"
 
 jobs:
   ts1:
