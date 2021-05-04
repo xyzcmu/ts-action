@@ -11,11 +11,11 @@ jobs:
       - name: checkout loacal repo
         uses: actions/checkout@v2
       - name: first
-        id: first
         run: |
           my_num=2
           echo "::set-output name=num::${my_num}"
       - name: second
-        if: steps.first.output.num > 1
         run: |
-          echo ok
+          echo "$info"
+        env:
+          info: ${{steps.first.output.num}}
