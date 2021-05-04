@@ -10,14 +10,12 @@ jobs:
     steps:
       - name: checkout loacal repo
         uses: actions/checkout@v2
-      - name: generate txt
+      - name: first
+        
         run: |
-          echo list-file
-          ls
-          cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-          data=$(date +"%Y%m%d.%H%M%S")
-          echo $data > a.txt
-      - name: commit
-        uses: elstudio/actions-js-build/commit@v4
-        with:
-          commitMessage: auto commit
+          my_num=2
+          echo "::set-output name=num::${my_num}"
+      - name: second
+        if: steps.first.output.num > 1
+        run: |
+          echo ok
