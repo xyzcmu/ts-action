@@ -11,7 +11,7 @@ jobs:
       - name: checkout loacal repo
         uses: actions/checkout@v2
       - name: first
-        
+        id: first
         run: |
           my_num=2
           echo "::set-output name=num::${my_num}"
