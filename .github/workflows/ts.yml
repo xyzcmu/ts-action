@@ -15,7 +15,7 @@ jobs:
           my_num=2
           echo "::set-output name=num::${my_num}"
       - name: second
+        if: ${{steps.first.output.num > 1}}
         run: |
-          echo "$info"
-        env:
-          info: steps.first.output.num
+          echo "okkkkk"
+        
