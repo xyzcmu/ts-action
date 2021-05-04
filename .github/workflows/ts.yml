@@ -13,7 +13,7 @@ jobs:
       - name: first
         run: |
           my_num=4
-          echo "::set-output name=num::${my_num}"
+          echo ${my_num}
       - name: second
         if: ${{steps.first.outputs.num > 3}}
         run: |
